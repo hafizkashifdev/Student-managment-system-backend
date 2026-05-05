@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Monthly Report</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #f9fafb; padding: 40px; color: #1f2937; }
+  .container { max-width: 700px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #4338ca, #7c3aed); color: #fff; padding: 32px; text-align: center; }
+  .header h1 { font-size: 26px; font-weight: 800; }
+  .header p { font-size: 14px; opacity: .85; margin-top: 4px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 28px; }
+  .stat-card { background: #f3f4f6; border-radius: 10px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 32px; font-weight: 800; color: #4338ca; }
+  .stat-card .label { font-size: 13px; color: #6b7280; margin-top: 4px; }
+  .section { padding: 0 28px 28px; }
+  .section h2 { font-size: 16px; font-weight: 700; margin-bottom: 12px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+  .att-row { display: flex; gap: 12px; }
+  .att-item { flex: 1; background: #f9fafb; border-radius: 8px; padding: 14px; text-align: center; }
+  .att-item .val { font-size: 22px; font-weight: 700; }
+  .att-item .lbl { font-size: 12px; color: #6b7280; }
+  .present .val { color: #059669; }
+  .absent .val { color: #dc2626; }
+  .late .val { color: #d97706; }
+  .footer { background: #f3f4f6; padding: 14px 28px; text-align: center; font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>{{academyName}}</h1>
+    <p>Monthly Report — {{month}}</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num">{{studentCount}}</div><div class="label">Active Students</div></div>
+    <div class="stat-card"><div class="num">{{teacherCount}}</div><div class="label">Teachers</div></div>
+    <div class="stat-card"><div class="num">Rs {{totalCollected}}</div><div class="label">Fee Collected</div></div>
+    <div class="stat-card"><div class="num">{{paymentCount}}</div><div class="label">Payments</div></div>
+  </div>
+  <div class="section">
+    <h2>Attendance Summary</h2>
+    <div class="att-row">
+      <div class="att-item present"><div class="val">{{present}}</div><div class="lbl">Present</div></div>
+      <div class="att-item absent"><div class="val">{{absent}}</div><div class="lbl">Absent</div></div>
+      <div class="att-item late"><div class="val">{{late}}</div><div class="lbl">Late</div></div>
+    </div>
+  </div>
+  <div class="footer">Generated on {{generatedAt}} — {{academyName}}</div>
+</div>
+</body>
+</html>

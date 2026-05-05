@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Salary Slip</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #f9fafb; padding: 40px; }
+  .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #065f46, #10b981); color: #fff; padding: 28px; text-align: center; }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .header p { font-size: 13px; opacity: .85; }
+  .body { padding: 28px; }
+  .row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid #f3f4f6; }
+  .label { color: #6b7280; font-size: 13px; }
+  .value { font-weight: 600; font-size: 14px; }
+  .amount { font-size: 22px; font-weight: 800; color: #065f46; }
+  .footer { background: #f3f4f6; padding: 14px 28px; text-align: center; font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>{{academyName}}</h1>
+    <p>Salary Slip / تنخواہ پرچی</p>
+  </div>
+  <div class="body">
+    <div class="row"><span class="label">Teacher / استاذ</span><span class="value">{{teacherName}}</span></div>
+    <div class="row"><span class="label">Month / مہینہ</span><span class="value">{{month}}</span></div>
+    <div class="row"><span class="label">Date / تاریخ</span><span class="value">{{date}}</span></div>
+    <div class="row"><span class="label">Designation</span><span class="value">{{designation}}</span></div>
+    <div class="row"><span class="label">Salary / تنخواہ</span><span class="amount">Rs {{amount}}</span></div>
+  </div>
+  <div class="footer">JazakAllah Khair — {{academyName}}</div>
+</div>
+</body>
+</html>

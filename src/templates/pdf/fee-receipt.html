@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fee Receipt</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; background: #f9fafb; color: #1f2937; padding: 40px; }
+  .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #1e40af, #3b82f6); color: #fff; padding: 30px; text-align: center; }
+  .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+  .header p { font-size: 13px; opacity: .85; }
+  .badge { display: inline-block; background: rgba(255,255,255,.2); border-radius: 20px; padding: 4px 14px; font-size: 12px; margin-top: 10px; }
+  .body { padding: 30px; }
+  .row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+  .row:last-child { border-bottom: none; }
+  .label { color: #6b7280; font-size: 13px; }
+  .value { font-weight: 600; font-size: 14px; color: #111827; }
+  .amount { font-size: 22px; font-weight: 800; color: #1e40af; }
+  .footer { background: #f3f4f6; padding: 16px 30px; text-align: center; font-size: 12px; color: #9ca3af; }
+  .receipt-no { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 10px 16px; margin-bottom: 20px; border-radius: 0 8px 8px 0; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>{{academyName}}</h1>
+    <p>Fee Receipt / فیس رسید</p>
+    <div class="badge">✅ Paid / ادا کردہ</div>
+  </div>
+  <div class="body">
+    <div class="receipt-no">🧾 Receipt No: <strong>{{receiptNumber}}</strong></div>
+    <div class="row"><span class="label">Student Name / طالب علم</span><span class="value">{{studentName}}</span></div>
+    <div class="row"><span class="label">Class / جماعت</span><span class="value">{{className}}</span></div>
+    <div class="row"><span class="label">Month / مہینہ</span><span class="value">{{month}}</span></div>
+    <div class="row"><span class="label">Payment Method</span><span class="value">{{paymentMethod}}</span></div>
+    <div class="row"><span class="label">Date / تاریخ</span><span class="value">{{date}}</span></div>
+    <div class="row"><span class="label">Amount Paid / ادا شدہ رقم</span><span class="amount">Rs {{amount}}</span></div>
+  </div>
+  <div class="footer">JazakAllah Khair — {{academyName}}</div>
+</div>
+</body>
+</html>
